@@ -32,13 +32,11 @@ const images = [
 
  const list = document.querySelector('.gallery');
 const imagesArr = images.map(image => {
-  const imgEl = document.createElement('img');
-   imgEl.src = `${image.url}`;
-   imgEl.alt = `${image.alt}`;
- // imgEl.classList.add('image');
-  return imgEl;
+  let content = `<img src="${image.url}" alt="${image.alt}" class="image" />`;
+  console.log(content);
+  return content;
 })
-console.log(imagesArr);
+console.log(...imagesArr);
 imagesArr.forEach((img)=> {
   list.insertAdjacentHTML('beforeend', "<li>" +` ${img }` + "</li>");
 })
