@@ -8,21 +8,32 @@ const btnCreate = document.querySelector('button[data-create]');
 const btnDestroy = document.querySelector('button[data-destroy]');
 const boxes = document.querySelector('#boxes');
 
+// function inputGetNumber() {
+//   inputNumber.addEventListener('input', (event) => {
+//     let amount = event.currentTarget.value;
+//     return amount;
+//   });
+// }
+// console.log(inputGetNumber());
+
 function createBoxes(amount) {
-  const numberDiv = inputNumber.addEventListener('input', (event) => {
-    return event.currentTarget.value;
-  });
-  const divArray = [];
-  for (let index = 1; index <= numberDiv; index++) {
-    //const element = index;
+  inputNumber.addEventListener('input', (event) => {
+    let amount = event.currentTarget.value;
+  })
+  let width = 30;
+  let height = 30;
+  for (let index = 1; index <= amount; index++) {
     const createDivElement = document.createElement('div');
-    cre
-    
+    createDivElement.style.width = width + "px";
+    createDivElement.style.height = height + "px";
+    createDivElement.style.backgroundColor = getRandomHexColor();
+    width += 10;
+    height += 10;
+
+    console.log(createDivElement);
+    boxes.append(createDivElement);
   }
-  
+
 }
 
-function destroyBoxes() {
-  
-}
-createBoxes();
+btnCreate.addEventListener('click', createBoxes());
