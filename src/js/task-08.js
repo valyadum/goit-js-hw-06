@@ -6,8 +6,12 @@ function onSubmitClick(event){
         elements: { email, password }
     } = event.currentTarget;
     if (email.value === '' || password.value === '') {
-        alert('Всі поля повинні бути заповнені');
+       return alert('Всі поля повинні бути заповнені');
     }
-    console.log(`Email: ${email.value}, Password: ${password.value}`);
+    const dataForm = {
+        email: `${email.value}`,
+        password: `${password.value}`
+    }
+    console.log(dataForm);
     event.currentTarget.reset();
 }
