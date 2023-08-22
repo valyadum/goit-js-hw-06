@@ -29,8 +29,6 @@ function createBoxes(amount) {
       width += 10;
       height += 10;
       colorBoxArr.push(createDivElement);
-      
-      //boxes.append(createDivElement);
     }
     console.log(colorBoxArr);
     boxes.append(...colorBoxArr);
@@ -39,12 +37,9 @@ function createBoxes(amount) {
   alert('Введено значення яке не відповідає вимогам!');
 }
 
-
-
-const divBox = document.querySelectorAll('.colorBox');
-function destroyBoxes() {  //нажаль не знаю як вірно очистити
-  inputNumber.textContent = ('');
-  divBox.remove();
+function destroyBoxes() {
+  inputNumber.textContent = '';
+  boxes.innerHTML = "";
 }
 btnCreate.addEventListener('click', createBoxes);
-btnCreate.addEventListener('click', destroyBoxes);
+btnDestroy.addEventListener('click', destroyBoxes);
