@@ -38,7 +38,7 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  inputNumber.textContent = '';
+  inputNumber.value = '';
   boxes.innerHTML = "";
 }
 btnCreate.addEventListener('click', createBoxes);
